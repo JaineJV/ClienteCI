@@ -9,7 +9,7 @@ class Usuario_model extends CI_Model {
     //recabe como parametro o email e senha
     public function getUsuario($email, $senha) {
         $this->db->where('email', $email);
-        $this->db->where('senha', $senha);
+        $this->db->where('senha', sha1($senha . 'jaineSENAC'));
 
         $query = $this->db->get('usuario');
         return $query->row(0);

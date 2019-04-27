@@ -40,5 +40,14 @@ class Usuario extends CI_Controller {
             }
         }
     }
+    
+    /*
+     * Método responsável por fazer o lougout [...] destruindo a sessão do usuário
+     */
+    public function sair(){
+        //apaga todo o conteudo da sessão do usuario
+        $this->session->sess_destroy();
+        redirect($this->config->base_url());
+    }
 }
     
