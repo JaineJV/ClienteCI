@@ -1,0 +1,12 @@
+#ladainha htaccess
+#este arquivo é lido pelo apache antyes de qualquer requisição
+#e nele é possível fazer configurações do apache baseado em regras
+
+#Rewrite é um método do Apache para reescrita de URLs
+#ESTE CÓDIGO Rewrite reescreve a URL inserindo manulmente
+#o index.php na URL digitada pra compatibilizar com o CodeIgniter
+RewriteEngine on
+RewriteBase /ClienteCI/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
