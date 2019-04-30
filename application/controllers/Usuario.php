@@ -36,7 +36,7 @@ class Usuario extends CI_Controller {
             } else {
                 $this->session->set_flashdata('mensagem', 'Usuário e Senha incorretos!');
                 //redireciona obrigando o login..
-                redirect($this->config->base_url() . 'index.php/Usuario/login');
+                redirect($this->config->base_url() . 'Usuario/login');
             }
         }
     }

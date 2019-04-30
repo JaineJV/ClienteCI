@@ -18,14 +18,17 @@
                     <li class="nav-item dropdown">
                         <a href="#" id="menuClientes" class="nav-link dropdown-toggle" data-toggle="dropdown"> Clientes </a>
                         <div class="dropdown-menu" aria-labelledby="menuClientes">
-                            <a href="<?= $this->config->base_url() . 'index.php/Cliente/listar'; ?>" class="dropdown-item"> Listar </a>
-                            <a href="<?= $this->config->base_url() . 'index.php/Cliente/cadastrar'; ?>" class="dropdown-item"> Cadastrar </a>
+                            <a href="<?= $this->config->base_url() . 'Cliente/listar'; ?>" class="dropdown-item"> Listar </a>
+                            <a href="<?= $this->config->base_url() . 'Cliente/cadastrar'; ?>" class="dropdown-item"> Cadastrar </a>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'Venda/listar'; ?>">Vendas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $this->config->base_url() . 'index.php/Usuario/sair'; ?>">
+                        <a class="nav-link" href="<?= $this->config->base_url() . 'Usuario/sair'; ?>">
                          Sair <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </li>
@@ -62,10 +65,10 @@
                         echo '<td>' . $c->rg . '</td>';
                         echo '<td>' . $c->cpf . '</td>';
                         echo '<td class="text-right">'
-                        . '<a class="btn btn-sm btn-outline-secondary mr-2" href="' . $this->config->base_url() . 'index.php/Cliente/alterar/' . $c->id
+                        . '<a class="btn btn-sm btn-outline-secondary mr-2" href="' . $this->config->base_url() . 'Cliente/alterar/' . $c->id
                         . '"><i class="fas fa-pen"></i> Alterar </a>'
                         . '<a class="btn btn-sm btn-outline-secondary" href="' . $this->config->base_url()//busca nas configurções a base da url
-                        . 'index.php/Cliente/deletar/' . $c->id . '"><i class="fas fa-trash"></i> Deletar </a>'
+                        . 'Cliente/deletar/' . $c->id . '"><i class="fas fa-trash"></i> Deletar </a>'
                         . '</td>';
                         echo '</tr>';
                     }
