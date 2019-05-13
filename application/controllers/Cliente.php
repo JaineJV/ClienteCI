@@ -29,7 +29,9 @@ class Cliente extends CI_Controller {
         $data['clientes'] = $this->cm->getAll();
 
         //carrega a View passando o conteúdo da variável $data
+        $this->load->view('Header');
         $this->load->view('ListaClientes', $data);
+        $this->load->view('Footer');
     }
 
     public function cadastrar() {
@@ -40,7 +42,9 @@ class Cliente extends CI_Controller {
         //valida se todos os requisitos do form foram atendidos 
         if ($this->form_validation->run() == false) {
             //caso não tenha passado na validação, carrega o formulários
+            $this->load->view('Header');
             $this->load->view('FormCliente');
+            $this->load->view('Footer');
         } else {
             //carrega o model
             $this->load->model('Cliente_model');
@@ -76,7 +80,9 @@ class Cliente extends CI_Controller {
                 //para resgatar os dados do cliente a ser alterado
                 $data['cliente'] = $this->Cliente_model->getOne($id);
 
+                $this->load->view('Header');
                 $this->load->view('FormCliente', $data);
+                $this->load->view('Footer');
             } else {
                 //resgata os daods recebidos por POST
                 $data = array(

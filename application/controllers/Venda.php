@@ -15,6 +15,8 @@ class Venda extends CI_Controller{
         $this->load->model('Venda_model');
         $dados['vendas'] = $this->Venda_model->getAll();
         
+        $this->load->view('Header');
         $this->load->view('ListaVendas', $dados);
+        $this->load->view('Footer');
     }
 }
